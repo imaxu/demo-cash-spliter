@@ -7,5 +7,6 @@ from .service.compute_service import ComputeService
 
 @chaifen.route('/compute/<int:fee>/<int:amount>')
 def get_detail(fee=None,amount=None):
+    from json import dumps
     results = ComputeService().compute(fee,amount)
-    return "123"
+    return dumps(results)
