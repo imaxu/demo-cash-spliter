@@ -6,15 +6,19 @@ import random
 class ComputeService(object):
     
     ''' 
-    @NAME 午餐业务服务类
+    @NAME 拆分计算
     @COMMENT 
-    @RETURN_CODE 20010-20020
+    @RETURN_CODE 
     '''
 
     def __init__(self):
         pass
 
     def compute(self,fee,amount):
+
+        if amount > 10000:
+            amount = 10000
+
         pools = []
         balance = fee
         for n in range(0,amount-1):
